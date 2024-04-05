@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Navigation Menu</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #62afd3;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    height: 4%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #faf4f4;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #0c70aa;
+    font-size: 1.4rem; 
+}
+
+.scrolled {
+    background-color: #070707; /* Change background color on scroll */
+  
+    transition: background-color 0.3s ease;
+}
+
+</style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home" style="height: 1000px; background-color: #f0f0f0;"></section>
+<section id="about" style="height: 1000px; background-color: #ddd;"></section>
+<section id="services" style="height: 1000px; background-color: #aaa;"></section>
+<section id="contact" style="height: 1000px; background-color: #888;"></section>
+
+<script>
+window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
+</script>
+</body>
+</html>
